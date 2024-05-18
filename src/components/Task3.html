@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Highlight Long Words</title>
+<style>
+  .highlight {
+    background-color: yellow;
+  }
+</style>
+</head>
+<body>
+
+<p id="paragraph">
+    KL University, formerly known as Koneru Lakshmaiah Education Foundation, is a prestigious institution nestled in the heart of Vijayawada, Andhra Pradesh, India. Established in 1980 by the visionary Sri Koneru Lakshmaiah, it has evolved into a sprawling educational conglomerate renowned for its commitment to excellence in teaching, research, and innovation.
+    <br/><br/>
+    At the core of KL University's ethos lies its dedication to nurturing holistic development, preparing students to thrive in an ever-evolving global landscape. With a diverse array of academic programs spanning engineering, management, sciences, humanities, and more, KL University offers students a platform to explore their passions and realize their fullest potential.
+    <br/><br/>
+    One of the hallmarks of KL University is its world-class faculty comprising distinguished scholars, researchers, and industry experts. Through their guidance and mentorship, students are empowered to think critically, engage in rigorous inquiry, and push the boundaries of knowledge in their respective fields.
+    <br/> <br/>
+    The university's state-of-the-art infrastructure provides a conducive environment for learning and innovation. From cutting-edge laboratories and research centers to modern classrooms and recreational facilities, KL University spares no effort in ensuring that students have access to the resources they need to excel.
+    <br/><br/>
+    Beyond academics, KL University places a strong emphasis on fostering a vibrant campus community enriched with cultural diversity and extracurricular opportunities. Students are encouraged to participate in clubs, societies, and events that cater to a wide range of interests, allowing them to develop leadership skills, forge lifelong friendships, and create memories that last a lifetime.
+    <br/><br/>
+    Moreover, KL University is committed to promoting entrepreneurship and innovation among its students. Through incubation centers, industry collaborations, and entrepreneurship programs, aspiring entrepreneurs are provided with the support and guidance needed to transform their ideas into successful ventures, contributing to the socioeconomic development of the region and beyond.
+    <br/><br/>
+    In line with its commitment to excellence, KL University consistently ranks among the top institutions in India, earning accolades for its academic reputation, research output, and alumni achievements. Its graduates are sought after by leading employers worldwide, testament to the quality of education imparted at the university.
+    <br/><br/>
+    In conclusion, KL University stands as a beacon of academic excellence, innovation, and inclusivity, shaping the leaders and change-makers of tomorrow. With its unwavering commitment to empowering students and advancing knowledge, it continues to redefine the landscape of higher education in India and beyond.
+</p>
+
+<script>
+  window.onload = function() {
+    // Get the text content of the paragraph
+    var paragraph = document.getElementById('paragraph').textContent;
+
+    // Split the text into words
+    var words = paragraph.split(' ');
+
+    // Loop through each word
+    for (var i = 0; i < words.length; i++) {
+      // Check if the word has more than eight characters
+      if (words[i].length > 8) {
+        // Wrap the word in a span with the highlight class
+        words[i] = '<span class="highlight">' + words[i] + '</span>';
+      }
+    }
+
+    // Join the words back together with spaces
+    var highlightedText = words.join(' ');
+
+    // Replace the content of the paragraph with the highlighted text
+    document.getElementById('paragraph').innerHTML = highlightedText;
+  };
+</script>
+
+</body>
+</html>
